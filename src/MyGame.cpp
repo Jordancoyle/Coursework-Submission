@@ -72,7 +72,7 @@ MyGame::~MyGame()
 
 void MyGame::initScene()
 {
-	auto pObj=shared_ptr<GameObject>(new GameObject);
+	auto pObj = shared_ptr<GameObject>(new GameObject);
 	pObj->setName("Cube");
 	auto transform = shared_ptr<Transform>(new Transform);
 	transform->setPosition(vec3(5, 0.0, 0.0));
@@ -103,13 +103,14 @@ void MyGame::initScene()
 	pShader->link();
 
 	pMaterial = shared_ptr<Material>(new Material);
-	texturePath = ASSET_PATH + TEXTURE_PATH + "/armoredrecon_diff.png";
+	texturePath = ASSET_PATH + TEXTURE_PATH + "/texture.png";
 	pMaterial->loadDiffuseTexture(texturePath);
 	pMaterial->setShader(pShader);
 
-	string modelFile = ASSET_PATH + MODEL_PATH + "/armoredrecon.fbx";
-	auto armoredreconModel=loadFBXFromFile(modelFile);
+	string modelFile = ASSET_PATH + MODEL_PATH + "/utah-teapot.fbx";
+	auto armoredreconModel = loadFBXFromFile(modelFile);
 	armoredreconModel->addComponentToAll(pMaterial);
+	armoredreconModel->addComponentToAll(transform);
 	m_GameObjects.push_back(armoredreconModel);
 
 	GameApplication::initScene();
