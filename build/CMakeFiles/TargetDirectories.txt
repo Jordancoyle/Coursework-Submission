@@ -1,3 +1,0 @@
-O:/Users/Matthew/Documents/Visual Studio 2013/Projects/Coursework-Submission/build/CMakeFiles/ALL_BUILD.dir
-O:/Users/Matthew/Documents/Visual Studio 2013/Projects/Coursework-Submission/build/CMakeFiles/GP2BaseCode.dir
-O:/Users/Matthew/Documents/Visual Studio 2013/Projects/Coursework-Submission/build/CMakeFiles/ZERO_CHECK.dir
