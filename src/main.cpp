@@ -152,6 +152,8 @@ void initScene()
 	currentGameObject->loadShader(vsPath, fsPath);
 	currentGameObject->setScale(vec3(0.3f, 0.3f, 0.3f));*/
 
+	string testcode;
+
 }
 
 void cleanUpFramebuffer()
