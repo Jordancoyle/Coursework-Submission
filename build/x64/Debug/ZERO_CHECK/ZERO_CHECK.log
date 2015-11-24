@@ -1,0 +1,10 @@
+﻿Build started 24/11/2015 18:35:23.
+     1>Project "O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\build\ZERO_CHECK.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because O:/Users/Matthew/Documents/Visual Studio 2013/Projects/Coursework-Submission/build/CMakeFiles/generate.stamp is up-to-date.
+     1>Done Building Project "O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\build\ZERO_CHECK.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.18
