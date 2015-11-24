@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\Graphics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\FBXLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\FileSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\src\Light.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\FBXLoader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Graphics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Vertices.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Mesh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\FileSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Cube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\include\Light.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="O:\Users\Matthew\Documents\Visual Studio 2013\Projects\Coursework-Submission\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{11B8135F-1F7D-418F-ACC8-D5EF265DB667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{12A9E116-F890-4274-ACE2-0EDD225ED6BB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
