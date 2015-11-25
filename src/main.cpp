@@ -10,8 +10,11 @@
 #include "Cube.h"
 #include <Camera.h>
 #include <Light.h>
+#include <Material.h>
+
 
 shared_ptr<GameObject> gameObject = shared_ptr<GameObject>(new GameObject);
+vector <shared_ptr<GameObject>> gameObjects;
 shared_ptr<Camera> camera = shared_ptr<Camera>(new Camera);
 shared_ptr<Light> light = shared_ptr<Light>(new Light);
 
@@ -43,7 +46,7 @@ void renderGameObject(shared_ptr<GameObject> currentGameObject)
 	}
 
 	light->setUpLight(currentShaderProgram);
-	gameObject->setUpGameObjectMaterial(currentShaderProgram);
+	currentGameObject->setUpGameObjectMaterial();
 
 
 	GLint MVPLocation = glGetUniformLocation(currentShaderProgram, "MVP");
@@ -138,21 +141,27 @@ void createFramebuffer()
 
 void initScene()
 {
-	gameObject->createBuffer(cubeVerts, numberOfCubeVerts, cubeIndices, numberOfCubeIndices);
-
-	string vsPath = ASSET_PATH + SHADER_PATH + "/simpleVS.glsl";
-	string fsPath = ASSET_PATH + SHADER_PATH + "/simpleFS.glsl";
-	gameObject->loadShader(vsPath, fsPath);
 
 	createFramebuffer();
 
-	/*string modelPath = ASSET_PATH + MODEL_PATH + "/utah-teapot.fbx";
-	auto currentGameObject = loadFBXFromFile(modelPath);
+	//Object 1 - Teapot
+	string modelPath = ASSET_PATH + MODEL_PATH + "/utah-teapot.fbx";
+	gameObject = loadFBXFromFile(modelPath);
+	string vsPath = ASSET_PATH + SHADER_PATH + "/simpleVS.glsl";
+	string fsPath = ASSET_PATH + SHADER_PATH + "/simpleFS.glsl";
+	gameObject->loadShader(vsPath, fsPath);
+	gameObject->setPosition(vec3(10.0, 50.0, 0.0f));
+	gameObject->setScale(vec3(0.1f, 0.1f, 0.1f));
+	gameObjects.push_back(gameObject);
 
-	currentGameObject->loadShader(vsPath, fsPath);
-	currentGameObject->setScale(vec3(0.3f, 0.3f, 0.3f));*/
-
-	string testcode;
+	//Object 2 - Armored Car
+	modelPath = ASSET_PATH + MODEL_PATH + "/armoredrecon.fbx";
+	gameObject = loadFBXFromFile(modelPath);
+	vsPath = ASSET_PATH + SHADER_PATH + "/specularVS.glsl";
+	fsPath = ASSET_PATH + SHADER_PATH + "/specularFS.glsl";
+	gameObject->loadShader(vsPath, fsPath);
+	gameObject->setPosition(vec3(0.0f, 0.0f, 0.0f));
+	gameObjects.push_back(gameObject);
 
 }
 
@@ -168,7 +177,9 @@ void cleanUpFramebuffer()
 
 void cleanUp()
 {
-	gameObject -> ~GameObject();
+	cleanUpFramebuffer();
+	gameObjects.clear();
+	gameObject->~GameObject();
 	camera -> ~Camera();
 	light -> ~Light();
 }
@@ -178,7 +189,11 @@ void update()
 	camera->setCamPos(vec3(4.0f, 2.0f, 10.0f));
 	camera->onUpdate();
 
-	gameObject->update();
+	for (auto iter = gameObjects.begin(); iter != gameObjects.end(); iter++)
+	{
+		(*iter)->update();
+	}
+
 
 }
 
@@ -190,7 +205,12 @@ void renderScene()
 	//clear the colour and depth buffer
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	renderGameObject(gameObject);
+	for (auto iter = gameObjects.begin(); iter != gameObjects.end(); iter++)
+	{
+		renderGameObject((*iter));
+
+	}
+
 
 }
 

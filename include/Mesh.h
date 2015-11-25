@@ -4,26 +4,39 @@
 #include "Vertices.h"
 #include "Common.h"
 
-struct MeshData
+class Mesh
 {
-	vector<Vertex> vertices;
-	vector<int> indices;
+public:
 
-	int getNumVerts()
+	Mesh();
+	~Mesh();
+	void update();
+	void create(Vertex *pVerts, int numVerts, int *pindices, int numIndices);
+
+	GLuint getVertexArrayObject()
 	{
-		return vertices.size();
+		return m_VAO;
+	}; 
+	
+	int getNumberOfIndices()
+	{
+		return m_NoOfIndices;
 	};
 
-	int getNumIndices()
+	int getNumberOfVertices()
 	{
-		return indices.size();
+		return m_NoOfVertices;
 	};
 
-	~MeshData()
-	{
-		vertices.clear();
-		indices.clear();
-	}
+private:
+	GLuint m_VBO;
+	GLuint m_EBO;
+	GLuint m_VAO;
+
+	int m_NoOfVertices;
+	int m_NoOfIndices;
+
+protected:
 };
 
 #endif
