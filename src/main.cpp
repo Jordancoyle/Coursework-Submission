@@ -10,10 +10,12 @@
 #include "Cube.h"
 #include <Camera.h>
 #include <Light.h>
+#include <Input.h>
 
 shared_ptr<GameObject> gameObject = shared_ptr<GameObject>(new GameObject);
 shared_ptr<Camera> camera = shared_ptr<Camera>(new Camera);
 shared_ptr<Light> light = shared_ptr<Light>(new Light);
+shared_ptr<Input> input = shared_ptr<Input>(new Input);
 
 //matrices
 mat4 MVPMatrix;
@@ -169,6 +171,7 @@ void cleanUp()
 	gameObject -> ~GameObject();
 	camera -> ~Camera();
 	light -> ~Light();
+	input -> ~Input();
 }
 
 void update()
@@ -282,19 +285,8 @@ int main(int argc, char * arg[])
 				run = false;
 			}
 			if (event.type == SDL_KEYDOWN){
-				switch (event.key.keysym.sym)
-				{
-				case SDLK_LEFT:
-					break;
-				case SDLK_RIGHT:
-					break;
-				case SDLK_UP:
-					break;
-				case SDLK_DOWN:
-					break;
-				default:
-					break;
-				}
+				input->setInputEvent(event);
+				input->inputDetection();
 			}
 		}
 		//init Scene
