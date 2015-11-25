@@ -7,6 +7,9 @@ list( APPEND CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS} -ftest-coverage -fpr
 set(CMAKE_PREFIX_PATH "C:/Users/Jordan Coyle/Documents/glew-1.12.0-win32/glew-1.12.0/include")
 set(CMAKE_LIBRARY_PATH "C:/Users/Jordan Coyle/Documents/glew-1.12.0-win32/glew-1.12.0/lib/Release/x64")
 
+set(CMAKE_PREFIX_PATH "O:/Users/Matthew/Documents/Uni Work/3rd Year/Games Programming 2/Lab Work/glew-1.12.0/include")
+set(CMAKE_LIBRARY_PATH "O:/Users/Matthew/Documents/Uni Work/3rd Year/Games Programming 2/Lab Work/glew-1.12.0/lib/Release/x64")
+
 find_package(OpenGL REQUIRED)
 find_package(SDL2 REQUIRED)
 find_package(SDL2_Image REQUIRED)
@@ -17,6 +20,9 @@ find_package(FBX REQUIRED)
 
 add_executable(GP2BaseCode src/main.cpp src/Graphics.cpp src/Shader.cpp src/Texture.cpp src/FBXLoader.cpp src/FileSystem.cpp src/GameObject.cpp src/Camera.cpp src/Light.cpp src/Input.cpp
 include/Common.h include/FBXLoader.h include/Graphics.h include/Shader.h include/Vertices.h include/Texture.h include/Mesh.h include/FileSystem.h include/GameObject.h include/Cube.h include/Camera.h include/Light.h include/Input.h)
+
+add_executable(GP2BaseCode src/main.cpp src/Graphics.cpp src/Shader.cpp src/Texture.cpp src/FBXLoader.cpp src/FileSystem.cpp src/GameObject.cpp src/Camera.cpp src/Light.cpp src/Mesh.cpp src/Material.cpp
+include/Common.h include/FBXLoader.h include/Graphics.h include/Shader.h include/Vertices.h include/Texture.h include/Mesh.h include/FileSystem.h include/GameObject.h include/Cube.h include/Camera.h include/Light.h include/Material.h)
 
 include_directories(GP2BaseCode include/ ${OPENGL_INCLUDE_DIRS} ${SDL2_INCLUDE_DIR} ${GLEW_INCLUDE_DIRS} ${GLM_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR} ${FBX_INCLUDE_DIR})
 # create the program
