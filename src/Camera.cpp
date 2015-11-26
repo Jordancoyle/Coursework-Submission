@@ -9,7 +9,7 @@ Camera::Camera()
 	m_CameraPosition = vec3(0.0f, 0.0f, 1.0f);
 	m_CameraFront = vec3(0.0f, 0.0f, -1.0f);
 	m_CameraLook = vec3(0.0f, 0.0f, 0.0f);
-	m_CameraSpeed = 0.03f;
+	m_CameraSpeed = 0.08f;
 	m_AspectRatio = 640.0f / 480.0f;
 	m_FOV = 45.0f;
 	m_NearClip = 0.1f;
@@ -24,6 +24,21 @@ Camera::~Camera()
 void Camera::moveForward()
 {
 	m_CameraPosition += m_CameraSpeed * m_CameraFront;
+}
+
+void Camera::moveBackward()
+{
+	m_CameraPosition -= m_CameraSpeed * m_CameraFront;
+}
+
+void Camera::moveRight()
+{
+	m_CameraPosition += normalize(cross(m_CameraFront, vec3(0.0f, 0.1f, 0.0f))) * m_CameraSpeed;
+}
+
+void Camera::moveLeft()
+{
+	m_CameraPosition -= normalize(cross(m_CameraFront, vec3(0.0f, 0.1f, 0.0f))) * m_CameraSpeed;
 }
 
 void Camera::onUpdate()

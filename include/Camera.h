@@ -14,6 +14,9 @@ public:
 
 	void onUpdate();
 	void moveForward();
+	void moveBackward();
+	void moveRight();
+	void moveLeft();
 
 	void setCamPos(vec3& pos)
 	{
