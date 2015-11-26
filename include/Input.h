@@ -10,7 +10,7 @@ public:
 	Input();
 	~Input();
 
-	void inputDetection();
+	void inputDetection(shared_ptr<Camera> camera);
 
 	void setInputEvent(SDL_Event tempEvent)
 	{

@@ -11,7 +11,7 @@ Input::~Input()
 
 }
 
-void Input::inputDetection()
+void Input::inputDetection(shared_ptr<Camera> camera)
 {
 	switch (inputEvent.key.keysym.sym)
 	{

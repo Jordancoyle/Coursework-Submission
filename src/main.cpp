@@ -306,7 +306,7 @@ int main(int argc, char * arg[])
 			}
 			if (event.type == SDL_KEYDOWN){
 				input->setInputEvent(event);
-				input->inputDetection();
+				input->inputDetection(camera);
 			}
 		}
 		//init Scene
