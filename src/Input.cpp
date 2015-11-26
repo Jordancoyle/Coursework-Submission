@@ -22,6 +22,7 @@ void Input::inputDetection()
 		cout << "right" << endl;
 		break;
 	case SDLK_UP:
+		camera->moveForward();
 		cout << "up" << endl;
 		break;
 	case SDLK_DOWN:

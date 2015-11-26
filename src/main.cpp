@@ -188,7 +188,6 @@ void cleanUp()
 
 void update()
 {
-	camera->setCamPos(vec3(4.0f, 2.0f, 10.0f));
 	camera->onUpdate();
 
 	for (auto iter = gameObjects.begin(); iter != gameObjects.end(); iter++)

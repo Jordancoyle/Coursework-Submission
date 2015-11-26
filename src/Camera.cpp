@@ -6,7 +6,10 @@ Camera::Camera()
 {
 	m_ViewMatrix = mat4(1.0f);
 	m_ProjMatrix = mat4(1.0f);
-	m_CameraPosition = vec3(0.0f, 0.0f, 10.0f);
+	m_CameraPosition = vec3(0.0f, 0.0f, 1.0f);
+	m_CameraFront = vec3(0.0f, 0.0f, -1.0f);
+	m_CameraLook = vec3(0.0f, 0.0f, 0.0f);
+	m_CameraSpeed = 0.03f;
 	m_AspectRatio = 640.0f / 480.0f;
 	m_FOV = 45.0f;
 	m_NearClip = 0.1f;
@@ -18,9 +21,15 @@ Camera::~Camera()
 
 }
 
+void Camera::moveForward()
+{
+	m_CameraPosition += m_CameraSpeed * m_CameraFront;
+}
+
 void Camera::onUpdate()
 {
-	m_ProjMatrix = perspective(m_FOV, m_AspectRatio, m_NearClip, m_FarClip);
+	m_CameraLook = m_CameraPosition + m_CameraFront;
 
-	m_ViewMatrix = lookAt(m_CameraPosition, vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f));
+	m_ProjMatrix = perspective(m_FOV, m_AspectRatio, m_NearClip, m_FarClip);
+	m_ViewMatrix = lookAt(m_CameraPosition, m_CameraLook, vec3(0.0f, 1.0f, 0.0f));
 }

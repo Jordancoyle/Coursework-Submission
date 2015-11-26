@@ -2,6 +2,7 @@
 #define _INPUT_H
 
 #include "Common.h"
+#include <Camera.h>
 
 class Input
 {
@@ -17,6 +18,7 @@ public:
 	}
 private:
 	SDL_Event inputEvent;
+	shared_ptr<Camera> camera = shared_ptr<Camera>(new Camera);
 protected:
 };
 
